@@ -26,4 +26,9 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @PostMapping("/user/login")
+    public String loginUser(@RequestBody User user) {
+        return userService.verifyUser(user);
+    }
 }
